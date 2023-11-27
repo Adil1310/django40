@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f8fa;
+        }
+
+        .centered-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #14171a;
+        }
+
+        .users,
+        .groups {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #14171a;
+        }
+
+        p {
+            font-size: 18px;
+            color: #14171a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="centered-container">
+        <h1>Welcome!</h1>
+        <div class="users">
+            <h2>All Users:</h2>
+            {% for user in all_users %}
+            <p>{{ user.username }}</p>
+            {% endfor %}
+        </div>
+        <div class="groups">
+            <h2>User Groups:</h2>
+            {% for group in user_groups %}
+            <p>{{ group.name }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
